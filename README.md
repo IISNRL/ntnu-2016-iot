@@ -1,11 +1,12 @@
-# Spring 2016, Special Topics in Computer Networks; NTNU-CSIE
+# Special Topics in Computer Networks
+
+Term: Spring 2016, NTNU-CSIE
 
 Instructor: Ling-Jyh Chen (Academia Sinica; cclljj@gmail.com)
 
 Time: Tuesday 2-5pm
 
 Location: NTNU Lib 801
-
 
 ## Course Description
 
