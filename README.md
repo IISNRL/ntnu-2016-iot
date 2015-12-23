@@ -28,7 +28,7 @@ The weekly topics of this course are in the followings:
 8. Project 1-6: Data visualization
 9. Project 1-7: code review & evaluation
 10. Project 2-1: new sensor 1 (change platform)
-11. Project 2-2: new sensor 1&2
+11. Project 2-2: new sensor 1 & 2
 12. Project 2-3: new sensor 2
 13. Project 2-4: code review & evaluation
 14. Project 3-1: IoT data analysis
