@@ -18,32 +18,32 @@ It is recommended (but not a must) that students bring their own laptops to the 
 
 The weekly topics of this course are in the followings:
 
-1. IoT/Maker overview & GitHub
-2. Participatory Urban Sensing Overview & IoT Platform Overview
-3. Project 1-1: T/H sensor
-4. Project 1-2: PM25 sensor
-5. Project 1-3: WiFi
-6. Project 1-4: GPS
-7. Project 1-5: MQTT
-8. Project 1-6: Data visualization
-9. Project 1-7: code review & evaluation
-10. Project 2-1: new sensor 1 (change platform)
-11. Project 2-2: new sensor 1 & 2
-12. Project 2-3: new sensor 2
-13. Project 2-4: code review & evaluation
-14. Project 3-1: IoT data analysis
-15. Project 3-2: IoT data analysis
-16. Project 3-3: data analysis project
-17. Project 3-4: data analysis project
+1. 2/23, IoT/Maker overview & GitHub
+2. 3/1, Participatory Urban Sensing Overview & IoT Platform Overview
+3. 3/8, IoT: I2C Interface - T/H sensor
+4. 3/15, IoT: UART Interface - PM25 sensor
+5. 3/22, Smart City Summit & Expo (http://smartcity.org.tw/index.php)
+6. 3/29, IoT: Data Communication - LoRa & WiFi
+7. 4/5, Holiday
+8. 4/12, Term Project Proposal
+9. 4/19, IoT: Data Transmission - MQTT
+10. 4/26, IoT: Backend - ThingSpeak & IBM Bluemix
+11. 5/3, Term Project Checkpoint (1)
+12. 5/10, IoT: Data Analysis
+13. 5/17, IoT: Data Visualization
+14. 5/24, Term Project Checkpoint (2)
+15. 5/31, IoT: Data Analysis/Visualization Practice
+16. 6/7, IoT: Data Analysis/Visualization Practice
+17. 6/14, Term Project Presentation
 
 ## Grading
 
 There are no exams in this couse, and the grading of this course will be mainly based on the class participation and projects. The specific scoring percentage of each project is:
 
 - Participation: 10%
-- Project 1: 30%
-- Project 2: 30%
-- Project 3: 30%
+- In-class assignments: 30%
+- Project Checkpoints: 20%
+- Term Project: 40%
 
 ## Textbook and Office Hour
 
