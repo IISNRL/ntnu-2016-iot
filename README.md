@@ -49,4 +49,6 @@ There are no exams in this couse, and the grading of this course will be mainly 
 
 There are no textbooks in this course, but you are expected to read MANY technical articles on the Internet as the project goes. Please do feel free to contact the instructors if you have any questions about this course (and the projects).
 
-
+## Platform
+ - MediaTek LinkIt One
+ - MediaTek LinkIt Smart 7688 Duo
