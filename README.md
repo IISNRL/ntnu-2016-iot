@@ -20,7 +20,7 @@ The weekly topics of this course are in the followings:
 
 1. 2/23, IoT/Maker overview & GitHub
 2. 3/1, Participatory Urban Sensing Overview & IoT Platform Overview
-3. 3/8, IoT: I2C Interface - T/H sensor
+3. 3/8, IoT: I2C Interface - T/H sensor (http://www.paperlined.org/EE/networks/i2c.ppt)
 4. 3/15, IoT: UART Interface - PM25 sensor
 5. 3/22, Smart City Summit & Expo (http://smartcity.org.tw/index.php)
 6. 3/29, IoT: Data Communication - LoRa & WiFi
