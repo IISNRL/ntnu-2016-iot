@@ -27,9 +27,11 @@ The weekly topics of this course are in the followings:
 3. 3/8, IoT: I2C Interface - T/H sensor 
    - I2C slides: http://www.paperlined.org/EE/networks/i2c.ppt
    - T/H sensor
-4. 3/15, IoT: UART Interface - PM25 sensor
+4. 3/15, IoT: Digital and UART Interface - PM25 sensor
    - UART slides:
+   - SoftwareSerial slides:
 5. 3/22, Smart City Summit & Expo (http://smartcity.org.tw/index.php)
+   - IoT projects:
 6. 3/29, IoT: Data Communication - LoRa & WiFi
    - LoRa slides:
 7. 4/5, Holiday
