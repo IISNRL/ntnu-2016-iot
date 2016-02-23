@@ -19,6 +19,11 @@ It is recommended (but not a must) that students bring their own laptops to the 
 The weekly topics of this course are in the followings:
 
 1. 2/23, IoT/Maker overview & GitHub
+   - Source Control Systems: https://softuni.bg/downloads/svn/teamwork-personal-skills/May-2015/1.%20Source-Control-Systems-SVN-Git-GitHub.pdf
+   - Git: http://plug.cs.fiu.edu/presentations/VersionControlGit.pdf
+   - Git cheet sheet: https://education.github.com/git-cheat-sheet-education.pdf
+   - Git tutorial: http://www.cs.columbia.edu/~sedwards/classes/2013/4840/git-tutorial.pdf
+   - 
 2. 3/1, Participatory Urban Sensing Overview & IoT Platform Overview
 3. 3/8, IoT: I2C Interface - T/H sensor 
    - I2C slides: http://www.paperlined.org/EE/networks/i2c.ppt
