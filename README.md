@@ -31,8 +31,6 @@ The weekly topics of this course are in the followings:
    - T/H sensor
       - BME280
       - SHT31
-      - 
-   
 4. 3/15, IoT: Digital and UART Interface - PM25 sensor
    - UART slides:
    - SoftwareSerial slides:
