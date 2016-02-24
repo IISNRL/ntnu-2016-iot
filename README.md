@@ -29,8 +29,8 @@ The weekly topics of this course are in the followings:
 3. 3/8, IoT: I2C Interface - T/H sensor 
    - I2C slides: http://www.paperlined.org/EE/networks/i2c.ppt
    - T/H sensor
-      - BME280
-      - SHT31
+      - BME280: https://www.adafruit.com/products/2652
+      - SHT31: https://www.adafruit.com/products/2857
 4. 3/15, IoT: Digital and UART Interface - PM25 sensor
    - UART slides:
    - SoftwareSerial slides:
