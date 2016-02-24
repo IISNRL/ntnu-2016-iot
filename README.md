@@ -25,6 +25,7 @@ The weekly topics of this course are in the followings:
    - Git tutorial: http://www.cs.columbia.edu/~sedwards/classes/2013/4840/git-tutorial.pdf
 2. 3/1, Participatory Urban Sensing Overview & IoT Platform Overview
    - Maker 經驗談：開發板到底有多少種？(http://www.techbang.com/posts/26072-cao-yongzhong-board-maker-iot)
+   - LinkIt Smart Duo VS. Arduino Yun (http://makerpro.cc/2015/12/linkit-smart-duo-vs-arduino-yun/)
    - LINKIT ONE VS EDISON VS RASPBERRY PI VS BEAGLEBONE BLACK (http://www.seeedstudio.com/blog/2014/10/31/linkit-one-vs-edison-vs-raspberry-pi-vs-beaglebone-black/)
 3. 3/8, IoT: I2C Interface - T/H sensor 
    - I2C slides: http://www.paperlined.org/EE/networks/i2c.ppt
