@@ -31,6 +31,7 @@ The weekly topics of this course are in the followings:
    - T/H sensor
       - BME280: https://www.adafruit.com/products/2652
       - SHT31: https://www.adafruit.com/products/2857
+      - HTU21: https://www.adafruit.com/products/1899
 4. 3/15, IoT: Digital and UART Interface - PM25 sensor
    - UART slides:
    - SoftwareSerial slides:
