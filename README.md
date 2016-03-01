@@ -67,5 +67,9 @@ There are no textbooks in this course, but you are expected to read MANY technic
 
 ## Platform
  - MediaTek LinkIt Smart 7688 Duo
+ - Realtek Ameba
+ - Arduino Yun
+ - Intel Edison
+## Sensor
  - Plantower PMS3003 PM2.5 Dust Sensor
  - 
