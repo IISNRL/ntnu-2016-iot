@@ -6,8 +6,6 @@
 
   These sensors use I2C to communicate, 2 pins are required to  
   interface
-
-This is for temperture and humidity.
  ****************************************************/
  
 #include <Arduino.h>
