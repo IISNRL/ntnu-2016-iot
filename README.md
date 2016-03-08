@@ -32,7 +32,7 @@ The weekly topics of this course are in the followings:
    - T/H sensor
       - BME280: https://www.adafruit.com/products/2652
       - SHT31: https://www.adafruit.com/products/2857
-      - HTU21: https://www.adafruit.com/products/1899 ; https://github.com/enjoyneering/HTU21D
+      - HTU21: https://github.com/enjoyneering/HTU21D
    - Barometer sensor
       - BME280: https://www.adafruit.com/products/2652
       - BMP180: https://www.adafruit.com/products/1603
