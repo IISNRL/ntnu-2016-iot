@@ -39,7 +39,7 @@ The weekly topics of this course are in the followings:
       - Grove - Barometer (High-Accuracy): http://www.seeedstudio.com/wiki/Grove_-_Barometer_(High-Accuracy)
    - Light sensor
       - SI1145: https://www.adafruit.com/products/1777
-      - BH1750FVI: https://github.com/claws/BH1750
+      - BH1750FVI: https://github.com/enjoyneering/BH1750FVI
 4. 3/15, IoT: Digital and UART Interface - PM25 sensor
    - UART slides:
    - SoftwareSerial slides:
