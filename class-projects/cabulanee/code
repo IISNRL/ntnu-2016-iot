@@ -1,0 +1,21 @@
+#define senor 1  //digtal sensor
+
+#include <Wire.h>
+#include <Digital_Light_TSL2561.h>
+
+void setup() {
+  #ifdef sensor==1
+  Wire.begin();
+ Serial.begin(9600);
+ TSL2561.init();
+ #endif
+
+}
+
+void loop() {
+  #ifdef sensor==1
+ Serial.print("The Light value is: ");
+ Serial.println(TSL2561.readVisibleLux());
+ delay(1000);
+ #endif
+}
