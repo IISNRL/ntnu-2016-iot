@@ -33,6 +33,13 @@ The weekly topics of this course are in the followings:
       - BME280: https://www.adafruit.com/products/2652
       - SHT31: https://www.adafruit.com/products/2857
       - HTU21: https://www.adafruit.com/products/1899
+   - Barometer sensor
+      - BME280: https://www.adafruit.com/products/2652
+      - BMP180: https://www.adafruit.com/products/1603
+      - Grove - Barometer (High-Accuracy): http://www.seeedstudio.com/wiki/Grove_-_Barometer_(High-Accuracy)
+   - Light sensor
+      - SI1145: https://www.adafruit.com/products/1777
+      - BH1750FVI: https://github.com/claws/BH1750
 4. 3/15, IoT: Digital and UART Interface - PM25 sensor
    - UART slides:
    - SoftwareSerial slides:
