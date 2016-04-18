@@ -55,6 +55,9 @@ The weekly topics of this course are in the followings:
    - Application scenario
    - Plan
 9. 4/19, IoT: Data Transmission - MQTT
+   - Introduction to MQTT: https://www.oasis-open.org/committees/download.php/49205/MQTT-OASIS-Webinar.pdf
+   - MQTT: http://www.indigoo.com/dox/wsmw/1_Middleware/MQTT.pdf
+   - CoAP: an introduction:  http://www.herjulf.se/download/coap.pdf
 10. 4/26, IoT: Backend - ThingSpeak & IBM Bluemix
 11. 5/3, Term Project Checkpoint (1)
 12. 5/10, IoT: Data Analysis
