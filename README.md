@@ -57,6 +57,7 @@ The weekly topics of this course are in the followings:
    - Introduction to MQTT: https://www.oasis-open.org/committees/download.php/49205/MQTT-OASIS-Webinar.pdf
    - MQTT: http://www.indigoo.com/dox/wsmw/1_Middleware/MQTT.pdf
    - CoAP: an introduction:  http://www.herjulf.se/download/coap.pdf
+   - Arduino Client for MQTT: http://pubsubclient.knolleary.net/
 10. 4/26, IoT: Backend - ThingSpeak & IBM Bluemix 
    - ThingSpeak Communication Library for Arduino: https://github.com/mathworks/thingspeak-arduino
    - MQTT_to_ThingSpeak Codes Example (Python): https://github.com/LinkItONEDevGroup/LASS/blob/master/DataPresentation/lass_pm25_to_thingspeak.py
