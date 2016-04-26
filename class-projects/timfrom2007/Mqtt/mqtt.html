@@ -1,0 +1,59 @@
+<html>
+<meta charset="utf-8">
+<title>mqtt js client demo</title>
+
+<script src="mqttws31-min.js"></script>
+<script>
+const TOPIC = "tw/rocksaying/";
+var client = false;
+
+// 用戶端成功連接 broker 時...
+function onConnect() {
+    // 確認連接後，才能訂閱主題
+    console.log("onConnect then subscribe topic");
+    client.subscribe(TOPIC + "#");
+}
+
+// 收到訊息時...
+function onMessageArrived(message) {
+    console.log("onMessageArrived:"+message.payloadString);
+    document.getElementById("mqtt_monitor").innerHTML = message.payloadString;
+}
+
+// 發佈訊息
+function publish_message() {
+    var payload = document.getElementById("mqtt_text").value;
+    var message = new Paho.MQTT.Message(payload);
+    message.destinationName = TOPIC + "text";
+    client.send(message);
+}
+
+function init() {
+    // 建立 MQTT 用戶端實體. 你必須正確寫上你設置的埠號.
+    // ClientId 可以自行指定，提供 MQTT broker 認證用
+    client = new Paho.MQTT.Client("tcp://crecaptcha:1883", "myClientId");
+
+    // 指定收到訊息時的處理動作
+    client.onMessageArrived = onMessageArrived;
+
+    // 連接 MQTT broker
+    client.connect({onSuccess:onConnect});
+}
+
+window.addEventListener('load', init, false);
+</script>
+<body>
+<p>
+mqtt client test...
+</p>
+
+<div>
+<input type="text" id="mqtt_text" />
+<button onclick="publish_message()">Publish</button>
+</div>
+
+<div id="mqtt_monitor">
+</div>
+
+</body>
+</html>
