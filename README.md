@@ -59,6 +59,8 @@ The weekly topics of this course are in the followings:
    - CoAP: an introduction:  http://www.herjulf.se/download/coap.pdf
 10. 4/26, IoT: Backend - ThingSpeak & IBM Bluemix 
    - ThingSpeak Communication Library for Arduino: https://github.com/mathworks/thingspeak-arduino
+   - IBM BlueMix introduction: https://www-01.ibm.com/software/ebusiness/jstart/downloads/BlueMixOverview.pdf
+   - IBM BlueMix Overview: http://www.slideshare.net/IanLynch1/bluemix-overview
 11. 5/3, Term Project Checkpoint (1)
 12. 5/10, IoT: Data Analysis
 13. 5/17, IoT: Data Visualization
