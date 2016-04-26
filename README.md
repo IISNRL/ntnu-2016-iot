@@ -51,7 +51,6 @@ The weekly topics of this course are in the followings:
 8. 4/12, Term Project Proposal
    - Topic
    - Device requirement (board, sensor, and others?)
-      - Arduino Yun x 2, Arduino 101 x 2, LinkIt One x 2 
    - Application scenario
    - Plan
 9. 4/19, IoT: Data Transmission - MQTT
