@@ -62,6 +62,15 @@ The weekly topics of this course are in the followings:
    - IBM BlueMix introduction: https://www-01.ibm.com/software/ebusiness/jstart/downloads/BlueMixOverview.pdf
    - IBM BlueMix Overview: http://www.slideshare.net/IanLynch1/bluemix-overview
 11. 5/3, IoT: Data Analysis
+   - R Tutorial - Data Import: http://www.r-tutor.com/r-introduction/data-frame/data-import
+   - R Tutorial Series - Summary and Descriptive Statistics: http://rtutorialseries.blogspot.tw/2009/11/r-tutorial-series-summary-and.html
+   - Using R for statistical analyses - Basic Statistics: http://www.gardenersown.co.uk/education/lectures/r/basics.htm
+   - Elementary Statistics with R: http://www.r-tutor.com/elementary-statistics
+   
+   - an R time series quick fix: http://www.stat.pitt.edu/stoffer/tsa3/R_toot.htm
+   - Using R for Time Series Analysis: http://a-little-book-of-r-for-time-series.readthedocs.org/en/latest/src/timeseries.html
+   
+   - R Spatial Tips: http://spatialanalysis.co.uk/r/
 12. 5/10, Term Project Checkpoint (1)
 13. 5/17, IoT: Data Visualization
 14. 5/24, Term Project Checkpoint (2)
