@@ -61,8 +61,8 @@ The weekly topics of this course are in the followings:
    - ThingSpeak Communication Library for Arduino: https://github.com/mathworks/thingspeak-arduino
    - IBM BlueMix introduction: https://www-01.ibm.com/software/ebusiness/jstart/downloads/BlueMixOverview.pdf
    - IBM BlueMix Overview: http://www.slideshare.net/IanLynch1/bluemix-overview
-11. 5/3, Term Project Checkpoint (1)
-12. 5/10, IoT: Data Analysis
+11. 5/3, IoT: Data Analysis
+12. 5/10, Term Project Checkpoint (1)
 13. 5/17, IoT: Data Visualization
 14. 5/24, Term Project Checkpoint (2)
 15. 5/31, IoT: Data Analysis/Visualization Practice
