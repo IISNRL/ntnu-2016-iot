@@ -74,6 +74,7 @@ The weekly topics of this course are in the followings:
    - R Spatial Tips: http://spatialanalysis.co.uk/r/
 12. 5/10, Term Project Checkpoint (1)
 13. 5/17, IoT: Data Visualization
+   - Voronoi Maps: https://github.com/zetter/voronoi-maps
 14. 5/24, Term Project Checkpoint (2)
 15. 5/31, IoT: Data Analysis/Visualization Practice
 16. 6/7, IoT: Data Analysis/Visualization Practice
