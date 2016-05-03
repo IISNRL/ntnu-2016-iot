@@ -66,6 +66,7 @@ The weekly topics of this course are in the followings:
 11. 5/3, IoT: Data Analysis
    - R Tutorial - Data Import: http://www.r-tutor.com/r-introduction/data-frame/data-import
    - R Tutorial Series - Summary and Descriptive Statistics: http://rtutorialseries.blogspot.tw/2009/11/r-tutorial-series-summary-and.html
+   - Learning R in Seven Simple Steps: http://www.datasciencecentral.com/profiles/blogs/learning-r-in-seven-simple-steps
    - Using R for statistical analyses - Basic Statistics: http://www.gardenersown.co.uk/education/lectures/r/basics.htm
    - Elementary Statistics with R: http://www.r-tutor.com/elementary-statistics
    - an R time series quick fix: http://www.stat.pitt.edu/stoffer/tsa3/R_toot.htm
