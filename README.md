@@ -77,6 +77,7 @@ The weekly topics of this course are in the followings:
    - Voronoi Maps
      - https://github.com/zetter/voronoi-maps
      - http://jsfiddle.net/mwvdlee/sjt06hx2/
+   - Animated Historical Maps: http://kyrandale.com/viz/uk-weather-stations.html
 14. 5/24, Term Project Checkpoint (2)
 15. 5/31, IoT: Data Analysis/Visualization Practice
 16. 6/7, IoT: Data Analysis/Visualization Practice
