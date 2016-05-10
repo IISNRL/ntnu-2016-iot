@@ -83,7 +83,9 @@ The weekly topics of this course are in the followings:
 14. 5/24, Term Project Checkpoint (2)
 15. 5/31, IoT: Data Analysis/Visualization Practice
 16. 6/7, IoT: Data Analysis/Visualization Practice
-17. 6/14, Term Project Presentation
+17. 6/14, Cancelled
+18. 6/21, Term Project Presentation
+
 
 ## Grading
 
