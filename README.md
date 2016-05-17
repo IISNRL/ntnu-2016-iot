@@ -76,6 +76,7 @@ The weekly topics of this course are in the followings:
 13. 5/17, IoT: Data Visualization
    - D3.js Gallery: https://github.com/mbostock/d3/wiki/Gallery
    - D3.js examples: http://bl.ocks.org/mbostock
+   - Highcharts: http://www.highcharts.com/
    - Voronoi Maps
      - https://github.com/zetter/voronoi-maps
      - http://jsfiddle.net/mwvdlee/sjt06hx2/
