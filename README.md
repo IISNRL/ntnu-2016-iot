@@ -77,9 +77,11 @@ The weekly topics of this course are in the followings:
    - D3.js Gallery: https://github.com/mbostock/d3/wiki/Gallery
    - D3.js examples: http://bl.ocks.org/mbostock
    - Highcharts: http://www.highcharts.com/
+     - http://nrl.iis.sinica.edu.tw/LASS/show.php?device_id=FT1_001
    - Voronoi Maps
      - https://github.com/zetter/voronoi-maps
      - http://jsfiddle.net/mwvdlee/sjt06hx2/
+     - http://nrl.iis.sinica.edu.tw/LASS/GIS/voronoi/voronoi.html
    - Animated Historical Maps: http://kyrandale.com/viz/uk-weather-stations.html
 14. 5/24, Term Project Checkpoint (2)
 15. 5/31, IoT: Data Analysis/Visualization Practice
