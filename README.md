@@ -73,7 +73,7 @@ The weekly topics of this course are in the followings:
    - Using R for Time Series Analysis: http://a-little-book-of-r-for-time-series.readthedocs.org/en/latest/src/timeseries.html
    - R Spatial Tips: http://spatialanalysis.co.uk/r/
 12. 5/10, Term Project Checkpoint (1)
-13. 5/17, IoT: Data Visualization
+13. 5/17, IoT: Data Visualization (https://dl.dropboxusercontent.com/u/11083816/airbox-20160318-20160427.csv)
    - D3.js Gallery: https://github.com/mbostock/d3/wiki/Gallery
    - D3.js examples: http://bl.ocks.org/mbostock
    - Highcharts: http://www.highcharts.com/
