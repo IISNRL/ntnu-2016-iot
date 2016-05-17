@@ -73,7 +73,7 @@ The weekly topics of this course are in the followings:
    - Using R for Time Series Analysis: http://a-little-book-of-r-for-time-series.readthedocs.org/en/latest/src/timeseries.html
    - R Spatial Tips: http://spatialanalysis.co.uk/r/
 12. 5/10, Term Project Checkpoint (1)
-13. 5/17, IoT: Data Visualization (https://dl.dropboxusercontent.com/u/11083816/airbox-20160318-20160427.csv)
+13. 5/17, IoT: Data Visualization
    - D3.js Gallery: https://github.com/mbostock/d3/wiki/Gallery
    - D3.js examples: http://bl.ocks.org/mbostock
    - Highcharts: http://www.highcharts.com/
@@ -83,9 +83,9 @@ The weekly topics of this course are in the followings:
      - http://jsfiddle.net/mwvdlee/sjt06hx2/
      - http://nrl.iis.sinica.edu.tw/LASS/GIS/voronoi/voronoi.html
    - Animated Historical Maps: http://kyrandale.com/viz/uk-weather-stations.html
-14. 5/24, Term Project Checkpoint (2)
-15. 5/31, IoT: Data Analysis/Visualization Practice
-16. 6/7, IoT: Data Analysis/Visualization Practice
+14. 5/24, Working on the Term Project
+15. 5/31, Term Project Checkpoint (2)
+16. 6/7, Working on the Term Project
 17. 6/14, Cancelled
 18. 6/21, Term Project Presentation
 
