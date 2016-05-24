@@ -35,6 +35,9 @@
 
 #include <stdlib.h>
 #include <string.h>
+
+#include <stdarg.h>
+
 #include <Ultrasonic.h>
 
 
