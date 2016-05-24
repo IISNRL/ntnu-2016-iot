@@ -20,6 +20,9 @@ BLEService smartCupService("8371");
 BLEUnsignedCharCharacteristic smartCupCharacteristic("8371", BLERead | BLEWrite);
 
 
+
+float waterline = 0;
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(BAUDRATE);
@@ -46,10 +49,7 @@ void setup() {
 void loop() {
   blePeripheral.poll();
 
-  float cm = ultrasonic.convert(ultrasonic.timing(), Ultrasonic::CM) ;
-  Serial.println( cm ) ;
-
-
+ 
   // listen for BLE peripherals to connect:
   BLECentral central = blePeripheral.central();
 
@@ -61,23 +61,17 @@ void loop() {
 
     // while the central is still connected to peripheral:
     while (central.connected()) {
-      // if the remote device wrote to the characteristic,
-      // use the value to control the LED:
-      if (smartCupCharacteristic.written()) {
-        if (smartCupCharacteristic.value()) {   // any value other than 0
-          Serial.println("LED on");
-        } else {                              // a 0 value
-          Serial.println(F("LED off"));
-        }
-      }
+      updateWaterLine();
     }
 
     // when the central disconnects, print it out:
     Serial.print(F("Disconnected from central: "));
     Serial.println(central.address());
   }
-  else
+  else{
     Serial.println("BLE fail");
+    updateWaterLine();
+  }
 
 /*  
   char payload[20] ;
@@ -88,3 +82,11 @@ void loop() {
   
   delay( 3000 );
 }
+
+void updateWaterLine(){
+  float cm = ultrasonic.convert(ultrasonic.timing(), Ultrasonic::CM) ;
+  Serial.println( cm ) ;
+  waterline = cm;
+  smartCupCharacteristic.setValue(waterline);
+}
+
