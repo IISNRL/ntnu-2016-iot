@@ -48,7 +48,8 @@ void setup() {
 
 void loop() {
   blePeripheral.poll();
-
+  float cm = ultrasonic.convert(ultrasonic.timing(), Ultrasonic::CM) ;
+  Serial.println( cm ) ;
  
   // listen for BLE peripherals to connect:
   BLECentral central = blePeripheral.central();
@@ -61,7 +62,8 @@ void loop() {
 
     // while the central is still connected to peripheral:
     while (central.connected()) {
-      updateWaterLine();
+      updateWaterLine(cm);
+      //delay(1000);
     }
 
     // when the central disconnects, print it out:
@@ -70,7 +72,7 @@ void loop() {
   }
   else{
     Serial.println("BLE fail");
-    updateWaterLine();
+    updateWaterLine(cm);
   }
 
 /*  
@@ -83,9 +85,7 @@ void loop() {
   delay( 3000 );
 }
 
-void updateWaterLine(){
-  float cm = ultrasonic.convert(ultrasonic.timing(), Ultrasonic::CM) ;
-  Serial.println( cm ) ;
+void updateWaterLine(float &cm){
   waterline = cm;
   smartCupCharacteristic.setValue(waterline);
 }
