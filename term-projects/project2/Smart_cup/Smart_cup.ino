@@ -19,9 +19,16 @@ BLEService smartCupService("8371");
 // BLE LED Switch Characteristic - custom 128-bit UUID, read and writable by central
 BLEUnsignedCharCharacteristic smartCupCharacteristic("8371", BLERead | BLEWrite);
 
+//--Accelerometer--
+#include "CurieIMU.h"
 
+int axRaw, ayRaw, azRaw;         // raw accelerometer values
+float ax, ay, az;
 
-float waterline = 0;
+//--Default Info--
+float cup_height = 10;  // cm
+float waterline = 0; ;  // cm
+float quantity = 0 ;  // cc:cm^3
 
 void setup() {
   // put your setup code here, to run once:
@@ -40,6 +47,10 @@ void setup() {
 
   blePeripheral.begin();
   Serial.println("Bluetooth device active, waiting for connections...");
+  
+  CurieIMU.begin();
+  // Set the accelerometer range to 2G
+  CurieIMU.setAccelerometerRange(2);
 /*
   mqtt_client.setServer(MQTT_SERVER,1883);
   mqtt_client.connect( "ABCDEFG" ) ;
@@ -49,7 +60,27 @@ void setup() {
 void loop() {
   blePeripheral.poll();
   float cm = ultrasonic.convert(ultrasonic.timing(), Ultrasonic::CM) ;
+  Serial.print( "dis :");
   Serial.println( cm ) ;
+ 
+  // read raw accelerometer measurements from device
+  CurieIMU.readAccelerometer(axRaw, ayRaw, azRaw);
+
+  // convert the raw accelerometer data to G's
+  ax = convertRawAcceleration(axRaw);
+  ay = convertRawAcceleration(ayRaw);
+  az = convertRawAcceleration(azRaw);
+
+  float theta = atan( sqrt(ax*ax+ay*ay)/az ) * 180/PI;
+  Serial.print("Angle :");
+  Serial.println(theta);
+
+  Serial.print( "Direction" ) ;
+
+  if( az > 0 )    Serial.println( "Down" ) ;
+  else            Serial.println(  "Up"  ) ;
+  
+  
  
   // listen for BLE peripherals to connect:
   BLECentral central = blePeripheral.central();
@@ -89,4 +120,6 @@ void updateWaterLine(float &cm){
   waterline = cm;
   smartCupCharacteristic.setValue(waterline);
 }
-
+float convertRawAcceleration(int aRaw) {
+  return (aRaw * 2.0) / 32768.0;
+}
