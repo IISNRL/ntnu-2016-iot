@@ -21,6 +21,7 @@
 #define ULTRASONIC_H
 
 #include <stddef.h>
+#include <stdarg.h>
 
 #if defined(ARDUINO) && ARDUINO >= 100
   #include <Arduino.h>
