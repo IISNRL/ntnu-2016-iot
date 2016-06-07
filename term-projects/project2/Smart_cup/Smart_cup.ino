@@ -16,8 +16,7 @@ Ultrasonic ultrasonic(TRIGGER_PIN, ECHO_PIN);
 #include "CurieBLE.h"
 BLEPeripheral blePeripheral;
 BLEService smartCupService("8371");
-// BLE LED Switch Characteristic - custom 128-bit UUID, read and writable by central
-BLEUnsignedCharCharacteristic smartCupCharacteristic("8371", BLERead | BLEWrite);
+BLEUnsignedCharCharacteristic smartCupCharacteristic("8371", BLERead | BLEWrite);//uuid for height 2A8E
 
 //--Accelerometer--
 #include "CurieIMU.h"
@@ -84,12 +83,14 @@ void loop() {
   }
 
   if (flipped && az > 0) {
+  //if (true) {
     blePeripheral.poll();
     float cm = ultrasonic.convert(ultrasonic.timing(), Ultrasonic::CM) ;
     Serial.print( "dis :");
     Serial.println( cm ) ;
     // listen for BLE peripherals to connect:
     BLECentral central = blePeripheral.central();
+    
 
     // if a central is connected to peripheral:
     if (central) {
