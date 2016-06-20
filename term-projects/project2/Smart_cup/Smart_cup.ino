@@ -30,9 +30,9 @@ int axRaw, ayRaw, azRaw;         // raw accelerometer values
 float ax, ay, az;
 
 //--Default Info--
-float radius = 0, cm = 0;  // cm
+float area = 0 ;  // cm^2
 float cup_height = 10;  // cm
-int waterline = 0;   // cm*10
+int waterLine = 0;   // cm
 float quantity = 0 ;  // cc:cm^3
 bool flipped = false;
 
@@ -61,6 +61,28 @@ void setup() {
     mqtt_client.setServer(MQTT_SERVER,1883);
     mqtt_client.connect( "ABCDEFG" ) ;
   */
+
+  while( true ){                        // Waiting for putting on cup
+      // read raw accelerometer measurements from device
+      CurieIMU.readAccelerometer(axRaw, ayRaw, azRaw);
+      float first = convertRawAcceleration(azRaw);
+      delay(100) ;
+      CurieIMU.readAccelerometer(axRaw, ayRaw, azRaw);
+      float second = convertRawAcceleration(azRaw);
+
+      if( abs(first-second) < 0.3 && first > 0.95 ) break ;
+  }
+
+  // Measure the waterline first
+  waterLine = measureHeight() ;
+
+  // Measure the radius of cup
+  area =  measureRadius() ;
+  area *= area ;
+
+  Serial.println( "SmartCup has already initailized.." ) ;
+  Serial.println( "Start measure ..." ) ;
+ 
 }
 
 void loop() {
@@ -75,50 +97,40 @@ void loop() {
   az = convertRawAcceleration(azRaw);
 
   float theta = atan( sqrt(ax * ax + ay * ay) / az ) * 180 / PI;
-  Serial.print("Angle :");
-  Serial.println(theta);
-
+//  Serial.print("Angle :");
+//  Serial.println(theta);
   Serial.print( "Direction" ) ;
-
-  if ( az > 0 ) {
+  if ( az > 0.95 ) {
     Serial.println( "Down" ) ;
+    flipped = false;
   }
-  else {
+  else if ( az < 0 ) {
     Serial.println(  "Up"  ) ;
     flipped = true;
   }
+  boolean drinked = false ;
 
-  //if (flipped && az > 0) {
-  if (true) {
-    blePeripheral.poll();
+   if( flipped ){
+      drinked = true ;
+      delay(2000) ;
+  }
+  else
+  {
+      if( drinked )
+      {    
+          float newWaterLine = measureHeight() ;
+          if( newWaterLine > waterLine ){         // Fill water
+              // do nothing ..
+          }
+          else
+          {
+              quantity += (waterLine-newWaterLine)*area ;
+          } 
 
-    // listen for BLE peripherals to connect:
-    BLECentral central = blePeripheral.central();
-
-
-    // if a central is connected to peripheral:
-    if (central) {
-      Serial.print("Connected to central: ");
-      // print the central's MAC address:
-      Serial.println(central.address());
-
-      // while the central is still connected to peripheral:
-      while (central.connected()) {
-        meatureRadius();
-        meatureHeight();
-        updateWaterLine(cm);
-        delay(3000);
+          waterLine = newWaterLine ;              // Update waterline
+          if( waterLine > cup_height ) cup_height = waterLine ;       // Update height of cup
       }
-
-      // when the central disconnects, print it out:
-      Serial.print(F("Disconnected from central: "));
-      Serial.println(central.address());
-    }
-    else {
-      Serial.println("BLE fail");
-      //updateWaterLine(cm);
-    }
-    flipped = false;
+      drinked = false ;
   }
 
   /*
@@ -128,36 +140,35 @@ void loop() {
     mqtt_client.loop();
   */
 
-  delay( 3000 );
 }
 
-void meatureHeight() {
+float measureHeight() {
   float total;
   for(int i=0;i<10;i+=1)
   {
-    cm = ultrasonic_v.convert(ultrasonic_v.timing(), Ultrasonic::CM) ;
+    float cm = ultrasonic_v.convert(ultrasonic_v.timing(), Ultrasonic::CM) ;
     total+=cm;
-    delay(500);
+    delay(200);
   }
-  cm = total/10;
-  Serial.print( "vertical dis :");
-  Serial.println( cm );
+  return total/10 ;
 }
 
-void meatureRadius() {
-  radius = ultrasonic_h.convert(ultrasonic_h.timing(), Ultrasonic::CM) ;
-  Serial.print( "horizontal dis :");
-  Serial.println( radius ) ;
-  Serial.print( "Area : ");
-  Serial.print( radius * radius * PI );
-  Serial.println( " cm^2" );
+float measureRadius() {
+  float total , rad ;
+  for(int i=0;i<10;i+=1)
+  {
+    rad = ultrasonic_h.convert(ultrasonic_h.timing(), Ultrasonic::CM) ;
+    total+=rad;
+    delay(500);
+  }
+  return total/10  ;
 }
 
 void updateWaterLine(float &cm) {
-  waterline = cm * 10;
-  Serial.println(waterline);
+  waterLine = cm * 10;
+  Serial.println(waterLine);
   Serial.println();
-  smartCupCharacteristic.setValue(waterline);
+  smartCupCharacteristic.setValue(waterLine);
 }
 float convertRawAcceleration(int aRaw) {
   return (aRaw * 2.0) / 32768.0;
