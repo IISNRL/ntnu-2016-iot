@@ -10,13 +10,18 @@
 #include <Ultrasonic.h>
 #define TRIGGER_PIN  12
 #define ECHO_PIN     13
-Ultrasonic ultrasonic(TRIGGER_PIN, ECHO_PIN);
+
+#define TRIGGER_2    10
+#define ECHO_2       11
+
+Ultrasonic ultrasonic_h(TRIGGER_PIN, ECHO_PIN);
+Ultrasonic ultrasonic_v(TRIGGER_2, ECHO_2);
 
 //--BLE----------
 #include "CurieBLE.h"
 BLEPeripheral blePeripheral;
-BLEService smartCupService("8371");
-BLEUnsignedCharCharacteristic smartCupCharacteristic("8371", BLERead | BLEWrite);//uuid for height 2A8E
+BLEService smartCupService("19B10011-E8F2-537E-4F6C-D104768A1214");
+BLEUnsignedCharCharacteristic smartCupCharacteristic("19B10011-E8F2-537E-4F6C-D104768A1214", BLERead);//uuid for height 2A8E
 
 //--Accelerometer--
 #include "CurieIMU.h"
@@ -25,8 +30,9 @@ int axRaw, ayRaw, azRaw;         // raw accelerometer values
 float ax, ay, az;
 
 //--Default Info--
+float radius = 0, cm = 0;  // cm
 float cup_height = 10;  // cm
-float waterline = 0;   // cm
+int waterline = 0;   // cm*10
 float quantity = 0 ;  // cc:cm^3
 bool flipped = false;
 
@@ -82,15 +88,13 @@ void loop() {
     flipped = true;
   }
 
-  if (flipped && az > 0) {
-  //if (true) {
+  //if (flipped && az > 0) {
+  if (true) {
     blePeripheral.poll();
-    float cm = ultrasonic.convert(ultrasonic.timing(), Ultrasonic::CM) ;
-    Serial.print( "dis :");
-    Serial.println( cm ) ;
+
     // listen for BLE peripherals to connect:
     BLECentral central = blePeripheral.central();
-    
+
 
     // if a central is connected to peripheral:
     if (central) {
@@ -100,8 +104,10 @@ void loop() {
 
       // while the central is still connected to peripheral:
       while (central.connected()) {
+        meatureRadius();
+        meatureHeight();
         updateWaterLine(cm);
-        //delay(1000);
+        delay(3000);
       }
 
       // when the central disconnects, print it out:
@@ -110,7 +116,7 @@ void loop() {
     }
     else {
       Serial.println("BLE fail");
-      updateWaterLine(cm);
+      //updateWaterLine(cm);
     }
     flipped = false;
   }
@@ -125,8 +131,32 @@ void loop() {
   delay( 3000 );
 }
 
+void meatureHeight() {
+  float total;
+  for(int i=0;i<10;i+=1)
+  {
+    cm = ultrasonic_v.convert(ultrasonic_v.timing(), Ultrasonic::CM) ;
+    total+=cm;
+    delay(500);
+  }
+  cm = total/10;
+  Serial.print( "vertical dis :");
+  Serial.println( cm );
+}
+
+void meatureRadius() {
+  radius = ultrasonic_h.convert(ultrasonic_h.timing(), Ultrasonic::CM) ;
+  Serial.print( "horizontal dis :");
+  Serial.println( radius ) ;
+  Serial.print( "Area : ");
+  Serial.print( radius * radius * PI );
+  Serial.println( " cm^2" );
+}
+
 void updateWaterLine(float &cm) {
-  waterline = cm;
+  waterline = cm * 10;
+  Serial.println(waterline);
+  Serial.println();
   smartCupCharacteristic.setValue(waterline);
 }
 float convertRawAcceleration(int aRaw) {
