@@ -35,6 +35,7 @@ float cup_height = 10;  // cm
 int waterLine = 0;   // cm
 float quantity = 0 ;  // cc:cm^3
 bool flipped = false;
+boolean drinked = false ;
 
 void setup() {
   // put your setup code here, to run once:
@@ -79,7 +80,12 @@ void setup() {
   // Measure the radius of cup
   area =  measureRadius() ;
   area *= area ;
+  area *= PI;
 
+  Serial.print( "Area: " ) ;
+  Serial.println( area ) ;
+  Serial.print( "Height: " ) ;
+  Serial.println( waterLine ) ;
   Serial.println( "SmartCup has already initailized.." ) ;
   Serial.println( "Start measure ..." ) ;
  
@@ -97,34 +103,41 @@ void loop() {
   az = convertRawAcceleration(azRaw);
 
   float theta = atan( sqrt(ax * ax + ay * ay) / az ) * 180 / PI;
+
 //  Serial.print("Angle :");
 //  Serial.println(theta);
-  Serial.print( "Direction" ) ;
+
+  //Serial.print( "Direction" ) ;
   if ( az > 0.95 ) {
-    Serial.println( "Down" ) ;
+    //Serial.println( "Down" ) ;
     flipped = false;
   }
   else if ( az < 0 ) {
-    Serial.println(  "Up"  ) ;
+    //Serial.println(  "Up"  ) ;
     flipped = true;
   }
-  boolean drinked = false ;
+
 
    if( flipped ){
       drinked = true ;
-      delay(2000) ;
+      delay(1000) ;
   }
   else
   {
       if( drinked )
       {    
+          Serial.println(  "drinked"  ) ;
+          delay(800) ;
           float newWaterLine = measureHeight() ;
-          if( newWaterLine > waterLine ){         // Fill water
+          //Serial.println( waterLine  ) ;
+          if( newWaterLine < waterLine ){         // Fill water
               // do nothing ..
+              Serial.println(  "Fill"  ) ;
           }
           else
           {
-              quantity += (waterLine-newWaterLine)*area ;
+              quantity += (newWaterLine-waterLine)*area ;
+              sendBLE(quantity);
           } 
 
           waterLine = newWaterLine ;              // Update waterline
@@ -159,16 +172,15 @@ float measureRadius() {
   {
     rad = ultrasonic_h.convert(ultrasonic_h.timing(), Ultrasonic::CM) ;
     total+=rad;
-    delay(500);
+    delay(200);
   }
   return total/10  ;
 }
 
-void updateWaterLine(float &cm) {
-  waterLine = cm * 10;
-  Serial.println(waterLine);
-  Serial.println();
-  smartCupCharacteristic.setValue(waterLine);
+void sendBLE(float &vol) {
+  Serial.print(vol);
+  Serial.println(" cc");
+  smartCupCharacteristic.setValue(vol*100);
 }
 float convertRawAcceleration(int aRaw) {
   return (aRaw * 2.0) / 32768.0;
