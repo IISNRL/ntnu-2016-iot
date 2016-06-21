@@ -21,7 +21,7 @@ Ultrasonic ultrasonic_v(TRIGGER_2, ECHO_2);
 #include "CurieBLE.h"
 BLEPeripheral blePeripheral;
 BLEService smartCupService("19B10011-E8F2-537E-4F6C-D104768A1214");
-BLEUnsignedCharCharacteristic smartCupCharacteristic("19B10011-E8F2-537E-4F6C-D104768A1214", BLERead);//uuid for height 2A8E
+BLEUnsignedIntCharacteristic smartCupCharacteristic("19B10011-E8F2-537E-4F6C-D104768A1214", BLERead);//uuid for height 2A8E
 
 //--Accelerometer--
 #include "CurieIMU.h"
@@ -180,7 +180,8 @@ float measureRadius() {
 void sendBLE(float &vol) {
   Serial.print(vol);
   Serial.println(" cc");
-  smartCupCharacteristic.setValue(vol*100);
+  int j = vol*100;
+  smartCupCharacteristic.setValue(j);
 }
 float convertRawAcceleration(int aRaw) {
   return (aRaw * 2.0) / 32768.0;
