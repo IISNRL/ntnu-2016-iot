@@ -92,7 +92,7 @@ void setup() {
 }
 
 void loop() {
-
+  BLECentral central = blePeripheral.central();
 
   // read raw accelerometer measurements from device
   CurieIMU.readAccelerometer(axRaw, ayRaw, azRaw);
